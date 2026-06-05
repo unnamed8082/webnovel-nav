@@ -2,8 +2,8 @@
   "id": "fanqie",
   "name": "番茄小说",
   "shortName": "番茄",
-  "url": "https://fanqienovel.com",
-  "authorUrl": "https://author.snssdk.com",
+  "url": "https://fanqie.com",
+  "authorUrl": "https://writer.fanqie.com",
   "type": "free",
   "suitableGenres": ["言情", "玄幻", "都市", "悬疑", "历史", "科幻", "穿越", "重生"],
   "incomeModels": ["广告分成", "全勤奖", "完本奖励"],
@@ -30,7 +30,7 @@
   "version": 1,
   "status": "active",
   "officialSources": [
-    { "name": "番茄作者帮助", "url": "https://fanqienovel.com/writer/help", "type": "help" },
-    { "name": "番茄官方微博", "url": "https://weibo.com/fanqienovel", "type": "weibo" }
+    { "name": "番茄小说官网", "url": "https://fanqie.com", "type": "help" },
+    { "name": "番茄作者后台", "url": "https://writer.fanqie.com", "type": "help" }
   ]
 }

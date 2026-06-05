@@ -74,8 +74,8 @@
     "本站信息仅供参考，具体规则以番茄官方最新公告为准。"
   ],
   "officialSources": [
-    { "name": "番茄小说官网", "url": "https://fanqienovel.com" },
-    { "name": "番茄作者后台", "url": "https://author.snssdk.com" }
+    { "name": "番茄小说官网", "url": "https://fanqie.com" },
+    { "name": "番茄作者后台", "url": "https://writer.fanqie.com" }
   ],
   "lastChecked": "2026-06-05",
   "schemaVersion": 1

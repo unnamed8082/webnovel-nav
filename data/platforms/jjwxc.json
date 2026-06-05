@@ -3,7 +3,7 @@
   "name": "晋江文学城",
   "shortName": "晋江",
   "url": "https://www.jjwxc.net",
-  "authorUrl": "https://www.jjwxc.net/oneauthor.php",
+  "authorUrl": "https://my.jjwxc.net/",
   "type": "paid",
   "suitableGenres": ["言情", "耽美", "百合", "纯爱", "古言", "现言", "穿越", "重生"],
   "incomeModels": ["VIP付费订阅", "打赏", "版权改编"],
@@ -30,7 +30,7 @@
   "version": 1,
   "status": "active",
   "officialSources": [
-    { "name": "晋江帮助中心", "url": "https://www.jjwxc.net/help/", "type": "help" },
-    { "name": "晋江官方微博", "url": "https://weibo.com/jjwxc", "type": "weibo" }
+    { "name": "晋江文学城", "url": "https://www.jjwxc.net", "type": "help" },
+    { "name": "晋江作者后台", "url": "https://my.jjwxc.net/", "type": "help" }
   ]
 }
