@@ -1,12 +1,33 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('writing')).sort(
+  (a, b) => new Date(b.data.updatedAt).getTime() - new Date(a.data.updatedAt).getTime()
+);
+
+const levelLabel = { beginner: '入门', intermediate: '进阶', advanced: '高级' };
 ---
 <BaseLayout title="写作技巧">
   <h1>✍️ 写作技巧</h1>
   <p style="color:#666; margin-bottom:1.5rem;">从零开始学习小说写作的基础技巧</p>
 
-  <div style="background:white; padding:2rem; border-radius:8px; text-align:center;">
-    <p>🚧 内容建设中，敬请期待...</p>
-    <p style="color:#999; margin-top:0.5rem;">我们会尽快整理写作技巧教程</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:1rem;">
+    {articles.map(article => (
+      <a href={`${import.meta.env.BASE_URL}writing/${article.id}`} style="background:white; padding:1.5rem; border-radius:8px; text-decoration:none; color:#333; display:block;">
+        <h3 style="margin-bottom:0.5rem; color:#e94560;">{article.data.title}</h3>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:0.5rem;">{article.data.summary}</p>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <span style="background:#1a1a2e; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">
+            {levelLabel[article.data.level]}
+          </span>
+          {article.data.tags.slice(0, 3).map(tag => (
+            <span style="background:#f0f0f0; color:#666; padding:2px 8px; border-radius:4px; font-size:0.8rem;">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </a>
+    ))}
   </div>
 </BaseLayout>

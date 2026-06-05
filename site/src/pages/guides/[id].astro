@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllGuides, getGuideByPlatformId } from '../../lib/guides.mjs';
+import { getPlatformById } from '../../lib/platforms.mjs';
+
+export function getStaticPaths() {
+  const guides = getAllGuides();
+  return guides.map(g => ({ params: { id: g.platformId } }));
+}
+
+const { id } = Astro.params;
+const guide = getGuideByPlatformId(id);
+const platform = getPlatformById(id);
+---
+<BaseLayout title={guide.title} description={guide.summary}>
+  <a href={`${import.meta.env.BASE_URL}guides`} style="color:#e94560; text-decoration:none;">← 返回指南列表</a>
+
+  <h1 style="margin-top:1rem;">{guide.title}</h1>
+  <p style="color:#666; margin-bottom:0.5rem;">{guide.summary}</p>
+  <p style="font-size:0.85rem; color:#999; margin-bottom:2rem;">
+    关联平台：<a href={`${import.meta.env.BASE_URL}platforms/${platform.id}`} style="color:#e94560;">{platform.name}</a>
+    &nbsp;|&nbsp; 信息核实日期：{guide.lastChecked}
+  </p>
+
+  <section>
+    <h2>📋 投稿步骤</h2>
+    <div style="margin-top:1rem;">
+      {guide.steps.map((step, i) => (
+        <div style="background:white; padding:1.5rem; border-radius:8px; margin-bottom:1rem; border-left:4px solid #e94560;">
+          <h3 style="margin-bottom:0.5rem;">
+            <span style="display:inline-block; background:#e94560; color:white; width:28px; height:28px; border-radius:50%; text-align:center; line-height:28px; font-size:0.85rem; margin-right:0.5rem;">{i + 1}</span>
+            {step.title}
+          </h3>
+          <p style="color:#555;">{step.description}</p>
+          {step.tips && step.tips.length > 0 && (
+            <ul style="margin-top:0.5rem; padding-left:1.2rem; color:#666; font-size:0.9rem;">
+              {step.tips.map(tip => <li style="margin-bottom:0.2rem;">💡 {tip}</li>)}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {guide.faq && guide.faq.length > 0 && (
+    <section style="margin-top:2rem;">
+      <h2>❓ 常见问题</h2>
+      <div style="margin-top:1rem;">
+        {guide.faq.map(item => (
+          <div style="background:white; padding:1.5rem; border-radius:8px; margin-bottom:1rem;">
+            <h4 style="color:#1a1a2e; margin-bottom:0.5rem;">Q: {item.question}</h4>
+            <p style="color:#555;">A: {item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {guide.riskNotes && guide.riskNotes.length > 0 && (
+    <section style="margin-top:2rem;">
+      <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:1.5rem;">
+        <h3 style="margin-bottom:0.5rem;">⚠️ 风险提示</h3>
+        <ul style="padding-left:1.2rem;">
+          {guide.riskNotes.map(note => <li style="margin-bottom:0.3rem; font-size:0.9rem;">{note}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {guide.officialSources && guide.officialSources.length > 0 && (
+    <section style="margin-top:1.5rem;">
+      <h3>📎 官方参考来源</h3>
+      <ul style="padding-left:1.2rem; margin-top:0.5rem;">
+        {guide.officialSources.map(src => (
+          <li style="margin-bottom:0.3rem;">
+            <a href={src.url} target="_blank" style="color:#e94560;">{src.name}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</BaseLayout>

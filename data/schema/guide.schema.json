@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Guide",
+  "description": "投稿指南数据结构",
+  "type": "object",
+  "required": [
+    "id",
+    "platformId",
+    "title",
+    "summary",
+    "steps",
+    "lastChecked"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "指南唯一标识，如 qidian-submit"
+    },
+    "platformId": {
+      "type": "string",
+      "description": "关联的平台 ID"
+    },
+    "title": {
+      "type": "string",
+      "description": "指南标题"
+    },
+    "summary": {
+      "type": "string",
+      "description": "指南摘要"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "description": "步骤标题" },
+          "description": { "type": "string", "description": "步骤说明" },
+          "tips": { "type": "array", "items": { "type": "string" }, "description": "注意事项" }
+        },
+        "required": ["title", "description"]
+      },
+      "description": "投稿/签约步骤"
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": { "type": "string" },
+          "answer": { "type": "string" }
+        },
+        "required": ["question", "answer"]
+      },
+      "description": "常见问题"
+    },
+    "riskNotes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "风险提示"
+    },
+    "officialSources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+        },
+        "required": ["name", "url"]
+      },
+      "description": "官方信息来源"
+    },
+    "lastChecked": {
+      "type": "string",
+      "format": "date",
+      "description": "信息最后核实日期"
+    },
+    "schemaVersion": {
+      "type": "integer",
+      "description": "数据结构版本号"
+    }
+  }
+}

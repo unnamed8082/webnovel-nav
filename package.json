@@ -7,7 +7,7 @@
     "dev": "astro dev --root ./site",
     "build": "astro build --root ./site",
     "preview": "astro preview --root ./site",
-    "test": "node --test tests/platform-data.test.mjs",
+    "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-data.mjs"
   },
   "keywords": ["webnovel", "writing", "platform-guide"],

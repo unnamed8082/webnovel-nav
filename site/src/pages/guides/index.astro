@@ -1,12 +1,43 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllGuides } from '../../lib/guides.mjs';
+import { getAllPlatforms } from '../../lib/platforms.mjs';
+
+const guides = getAllGuides();
+const platforms = getAllPlatforms();
+
+function getPlatformName(platformId) {
+  const p = platforms.find(p => p.id === platformId);
+  return p ? p.name : platformId;
+}
 ---
 <BaseLayout title="投稿指南">
   <h1>📝 投稿指南</h1>
   <p style="color:#666; margin-bottom:1.5rem;">各平台的投稿流程、签约步骤、常见问题解答</p>
 
-  <div style="background:white; padding:2rem; border-radius:8px; text-align:center;">
-    <p>🚧 内容建设中，敬请期待...</p>
-    <p style="color:#999; margin-top:0.5rem;">我们会尽快整理各平台的投稿流程和签约指南</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:1rem;">
+    {guides.map(guide => (
+      <a href={`${import.meta.env.BASE_URL}guides/${guide.platformId}`} style="background:white; padding:1.5rem; border-radius:8px; text-decoration:none; color:#333; display:block;">
+        <h3 style="margin-bottom:0.5rem; color:#e94560;">{guide.title}</h3>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:0.5rem;">{guide.summary}</p>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <span style="background:#1a1a2e; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">
+            {getPlatformName(guide.platformId)}
+          </span>
+          <span style="background:#f0f0f0; color:#666; padding:2px 8px; border-radius:4px; font-size:0.8rem;">
+            {guide.steps.length} 个步骤
+          </span>
+          {guide.faq && guide.faq.length > 0 && (
+            <span style="background:#f0f0f0; color:#666; padding:2px 8px; border-radius:4px; font-size:0.8rem;">
+              {guide.faq.length} 个 FAQ
+            </span>
+          )}
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:1rem; margin-top:2rem;">
+    <p style="font-size:0.9rem;">⚠️ 以上指南基于公开渠道整理，仅供参考。具体投稿流程和签约条件请以各平台官方最新公告为准。</p>
   </div>
 </BaseLayout>
