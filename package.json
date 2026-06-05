@@ -1,0 +1,19 @@
+{
+  "name": "webnovel-nav",
+  "version": "0.1.0",
+  "description": "网文新手导航站 - 帮助想写小说的新手了解行业、选择平台、学习写作",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --root ./site",
+    "build": "astro build --root ./site",
+    "preview": "astro preview --root ./site",
+    "test": "node --test tests/**/*.test.mjs",
+    "validate": "node scripts/validate-data.mjs"
+  },
+  "keywords": ["webnovel", "writing", "platform-guide"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^6.4.4"
+  }
+}

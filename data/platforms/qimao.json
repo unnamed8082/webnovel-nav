@@ -1,0 +1,30 @@
+{
+  "id": "qimao",
+  "name": "七猫小说",
+  "shortName": "七猫",
+  "url": "https://www.qimao.com",
+  "authorUrl": "https://author.qimao.com",
+  "type": "free",
+  "suitableGenres": ["言情", "玄幻", "都市", "悬疑", "穿越", "重生", "灵异"],
+  "incomeModels": ["广告分成", "全勤奖", "完本奖励"],
+  "beginnerFriendlyScore": 5,
+  "contractDifficulty": "easy",
+  "minWordsForContract": 10000,
+  "dailyUpdateRequirement": "2000字/天以上",
+  "description": "免费阅读平台，门槛低，审核快。下沉市场用户多，适合新手练手。",
+  "pros": [
+    "门槛极低，适合新手练手",
+    "签约审核快",
+    "全勤奖制度",
+    "对题材包容度高"
+  ],
+  "cons": [
+    "流量不如番茄",
+    "单本收益较低",
+    "读者群体偏下沉",
+    "作品质量要求不高"
+  ],
+  "tags": ["免费", "新人友好", "门槛低"],
+  "lastChecked": "2026-06-05",
+  "version": 1
+}

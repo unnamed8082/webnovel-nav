@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllPlatforms, getPlatformById } from '../../lib/platforms.mjs';
+
+export function getStaticPaths() {
+  const platforms = getAllPlatforms();
+  return platforms.map(p => ({ params: { id: p.id } }));
+}
+
+const { id } = Astro.params;
+const platform = getPlatformById(id);
+
+const difficultyLabel = { easy: '容易', medium: '中等', hard: '困难' };
+const typeLabel = { paid: '付费阅读', free: '免费+广告', mixed: '混合模式' };
+---
+<BaseLayout title={platform.name} description={platform.description}>
+  <a href="/platforms" style="color:#e94560; text-decoration:none;">← 返回平台列表</a>
+
+  <h1 style="margin-top:1rem;">{platform.name} ({platform.shortName})</h1>
+  <p style="color:#666; margin-bottom:1.5rem;">{platform.description}</p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:1rem; margin-bottom:2rem;">
+    <div style="background:white; padding:1rem; border-radius:8px;">
+      <div style="font-size:0.85rem; color:#999;">平台类型</div>
+      <div style="font-weight:bold;">{typeLabel[platform.type]}</div>
+    </div>
+    <div style="background:white; padding:1rem; border-radius:8px;">
+      <div style="font-size:0.85rem; color:#999;">签约难度</div>
+      <div style="font-weight:bold;">{difficultyLabel[platform.contractDifficulty]}</div>
+    </div>
+    <div style="background:white; padding:1rem; border-radius:8px;">
+      <div style="font-size:0.85rem; color:#999;">新手友好度</div>
+      <div style="font-weight:bold;">{'⭐'.repeat(platform.beginnerFriendlyScore)}</div>
+    </div>
+    {platform.minWordsForContract !== undefined && (
+      <div style="background:white; padding:1rem; border-radius:8px;">
+        <div style="font-size:0.85rem; color:#999;">签约最低字数</div>
+        <div style="font-weight:bold;">{platform.minWordsForContract.toLocaleString()} 字</div>
+      </div>
+    )}
+    {platform.dailyUpdateRequirement && (
+      <div style="background:white; padding:1rem; border-radius:8px;">
+        <div style="font-size:0.85rem; color:#999;">日更要求</div>
+        <div style="font-weight:bold;">{platform.dailyUpdateRequirement}</div>
+      </div>
+    )}
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+    <div style="background:white; padding:1.5rem; border-radius:8px;">
+      <h3 style="color:#16c79a; margin-bottom:0.5rem;">✅ 优点</h3>
+      <ul style="padding-left:1.2rem;">
+        {platform.pros?.map(item => <li style="margin-bottom:0.3rem;">{item}</li>)}
+      </ul>
+    </div>
+    <div style="background:white; padding:1.5rem; border-radius:8px;">
+      <h3 style="color:#e94560; margin-bottom:0.5rem;">❌ 缺点</h3>
+      <ul style="padding-left:1.2rem;">
+        {platform.cons?.map(item => <li style="margin-bottom:0.3rem;">{item}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div style="background:white; padding:1.5rem; border-radius:8px; margin-top:1.5rem;">
+    <h3>📋 详细信息</h3>
+    <table style="width:100%; margin-top:0.5rem;">
+      <tr><td style="padding:0.5rem; color:#999; width:120px;">官网</td><td><a href={platform.url} target="_blank">{platform.url}</a></td></tr>
+      {platform.authorUrl && <tr><td style="padding:0.5rem; color:#999;">作者后台</td><td><a href={platform.authorUrl} target="_blank">{platform.authorUrl}</a></td></tr>}
+      <tr><td style="padding:0.5rem; color:#999;">适合题材</td><td>{platform.suitableGenres.join('、')}</td></tr>
+      <tr><td style="padding:0.5rem; color:#999;">收入模式</td><td>{platform.incomeModels.join('、')}</td></tr>
+      <tr><td style="padding:0.5rem; color:#999;">标签</td><td>{platform.tags?.join('、')}</td></tr>
+      <tr><td style="padding:0.5rem; color:#999;">信息更新</td><td>{platform.lastChecked}</td></tr>
+    </table>
+  </div>
+</BaseLayout>

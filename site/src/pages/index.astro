@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllPlatforms } from '../lib/platforms.mjs';
+
+const platforms = getAllPlatforms();
+const totalPlatforms = platforms.length;
+const paidPlatforms = platforms.filter(p => p.type === 'paid').length;
+const freePlatforms = platforms.filter(p => p.type === 'free').length;
+---
+<BaseLayout title="首页">
+  <section style="text-align:center; padding:2rem 0;">
+    <h1>📖 网文新手导航站</h1>
+    <p style="font-size:1.2rem; color:#666; margin-top:0.5rem;">
+      帮你了解行业、选择平台、学习写作
+    </p>
+  </section>
+
+  <section style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0;">
+    <div style="background:white; padding:1.5rem; border-radius:8px; text-align:center;">
+      <div style="font-size:2rem; font-weight:bold; color:#e94560;">{totalPlatforms}</div>
+      <div>收录平台</div>
+    </div>
+    <div style="background:white; padding:1.5rem; border-radius:8px; text-align:center;">
+      <div style="font-size:2rem; font-weight:bold; color:#0f3460;">{paidPlatforms}</div>
+      <div>付费平台</div>
+    </div>
+    <div style="background:white; padding:1.5rem; border-radius:8px; text-align:center;">
+      <div style="font-size:2rem; font-weight:bold; color:#16c79a;">{freePlatforms}</div>
+      <div>免费平台</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔥 热门平台</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem; margin-top:1rem;">
+      {platforms.map(p => (
+        <a href={`/platforms/${p.id}`} style="background:white; padding:1.5rem; border-radius:8px; text-decoration:none; color:#333;">
+          <h3 style="margin-bottom:0.5rem;">{p.name} ({p.shortName})</h3>
+          <p style="font-size:0.9rem; color:#666;">{p.description.slice(0, 60)}...</p>
+          <div style="margin-top:0.5rem;">
+            <span style={{background: p.type === 'paid' ? '#e94560' : '#16c79a', color:'white', padding:'2px 8px', borderRadius:'4px', fontSize:'0.8rem'}}>
+              {p.type === 'paid' ? '付费' : '免费'}
+            </span>
+            <span style="margin-left:0.5rem; font-size:0.85rem;">
+              新手友好度：{'⭐'.repeat(p.beginnerFriendlyScore)}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>🚀 新手入门路径</h2>
+    <div style="background:white; padding:1.5rem; border-radius:8px; margin-top:1rem;">
+      <ol style="padding-left:1.5rem;">
+        <li style="margin-bottom:0.5rem;"><strong>了解平台</strong> — 看看各平台的风格、要求和收入模式</li>
+        <li style="margin-bottom:0.5rem;"><strong>学习写作</strong> — 掌握大纲、人物、对话等基础技巧</li>
+        <li style="margin-bottom:0.5rem;"><strong>开始创作</strong> — 写出你的第一本小说（建议先写3-5万字）</li>
+        <li style="margin-bottom:0.5rem;"><strong>投稿签约</strong> — 选择合适的平台，按流程投稿</li>
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

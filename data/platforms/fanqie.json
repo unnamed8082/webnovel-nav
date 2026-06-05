@@ -1,0 +1,31 @@
+{
+  "id": "fanqie",
+  "name": "番茄小说",
+  "shortName": "番茄",
+  "url": "https://fanqienovel.com",
+  "authorUrl": "https://author.snssdk.com",
+  "type": "free",
+  "suitableGenres": ["言情", "玄幻", "都市", "悬疑", "历史", "科幻", "穿越", "重生"],
+  "incomeModels": ["广告分成", "全勤奖", "完本奖励"],
+  "beginnerFriendlyScore": 5,
+  "contractDifficulty": "easy",
+  "minWordsForContract": 20000,
+  "dailyUpdateRequirement": "2000字/天以上",
+  "description": "字节跳动旗下免费阅读平台，流量巨大，门槛低，适合新人起步。以广告分成模式为主。",
+  "pros": [
+    "门槛最低，新人友好",
+    "流量巨大（字节跳动推荐算法）",
+    "签约容易，审核快",
+    "全勤奖制度好",
+    "适合走量型作者"
+  ],
+  "cons": [
+    "单本收入天花板不如付费平台",
+    "签约后版权归平台（需注意）",
+    "免费模式读者付费意愿低",
+    "作品质量要求相对较低"
+  ],
+  "tags": ["免费", "新人友好", "大流量", "广告分成"],
+  "lastChecked": "2026-06-05",
+  "version": 1
+}

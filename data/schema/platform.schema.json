@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Platform",
+  "description": "网文平台数据结构",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "shortName",
+    "url",
+    "type",
+    "suitableGenres",
+    "incomeModels",
+    "beginnerFriendlyScore",
+    "contractDifficulty",
+    "description",
+    "lastChecked"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "平台唯一标识，如 qidian, jjwxc"
+    },
+    "name": {
+      "type": "string",
+      "description": "平台全称"
+    },
+    "shortName": {
+      "type": "string",
+      "description": "平台简称"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "平台官网"
+    },
+    "authorUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "作者后台/投稿入口"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["paid", "free", "mixed"],
+      "description": "平台类型：paid=付费阅读, free=免费+广告, mixed=混合"
+    },
+    "suitableGenres": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "适合的题材类型"
+    },
+    "incomeModels": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "收入模式"
+    },
+    "beginnerFriendlyScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "新手友好度 1-5"
+    },
+    "contractDifficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"],
+      "description": "签约难度"
+    },
+    "minWordsForContract": {
+      "type": "integer",
+      "description": "签约最低字数要求"
+    },
+    "dailyUpdateRequirement": {
+      "type": "string",
+      "description": "日更要求，如 '2000-4000字/天'"
+    },
+    "description": {
+      "type": "string",
+      "description": "平台简介"
+    },
+    "pros": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "优点"
+    },
+    "cons": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "缺点"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "标签，如 '男频', '女频', '免费'"
+    },
+    "lastChecked": {
+      "type": "string",
+      "format": "date",
+      "description": "信息最后核实日期"
+    },
+    "version": {
+      "type": "integer",
+      "description": "数据版本号"
+    }
+  }
+}

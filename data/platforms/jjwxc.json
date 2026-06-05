@@ -1,0 +1,31 @@
+{
+  "id": "jjwxc",
+  "name": "晋江文学城",
+  "shortName": "晋江",
+  "url": "https://www.jjwxc.net",
+  "authorUrl": "https://www.jjwxc.net/oneauthor.php",
+  "type": "paid",
+  "suitableGenres": ["言情", "耽美", "百合", "纯爱", "古言", "现言", "穿越", "重生"],
+  "incomeModels": ["VIP付费订阅", "打赏", "版权改编"],
+  "beginnerFriendlyScore": 3,
+  "contractDifficulty": "medium",
+  "minWordsForContract": 0,
+  "dailyUpdateRequirement": "无硬性要求，但建议日更",
+  "description": "国内最大的女性向文学平台，以言情、耽美为主。读者付费意愿高，社区氛围好。",
+  "pros": [
+    "女频第一平台，读者精准",
+    "签约门槛相对较低",
+    "读者付费意愿强",
+    "社区氛围好，互动活跃",
+    "IP改编机会多（影视剧）"
+  ],
+  "cons": [
+    "以女频为主，男频作品较少",
+    "竞争激烈",
+    "网站界面较老旧",
+    "版权条款需仔细阅读"
+  ],
+  "tags": ["女频", "付费", "耽美", "言情"],
+  "lastChecked": "2026-06-05",
+  "version": 1
+}

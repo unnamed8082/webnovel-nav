@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllPlatforms } from '../../lib/platforms.mjs';
+
+const platforms = getAllPlatforms();
+const difficultyLabel = { easy: '容易', medium: '中等', hard: '困难' };
+const typeLabel = { paid: '付费阅读', free: '免费+广告', mixed: '混合模式' };
+---
+<BaseLayout title="平台对比">
+  <h1>📊 平台对比</h1>
+  <p style="color:#666; margin-bottom:1.5rem;">对比各主流网文平台的签约条件、收入模式、适合题材等信息</p>
+
+  <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; background:white; border-radius:8px; overflow:hidden;">
+      <thead>
+        <tr style="background:#1a1a2e; color:white;">
+          <th style="padding:1rem; text-align:left;">平台</th>
+          <th style="padding:1rem; text-align:left;">类型</th>
+          <th style="padding:1rem; text-align:left;">签约难度</th>
+          <th style="padding:1rem; text-align:left;">新手友好度</th>
+          <th style="padding:1rem; text-align:left;">适合题材</th>
+          <th style="padding:1rem; text-align:left;">收入模式</th>
+        </tr>
+      </thead>
+      <tbody>
+        {platforms.map((p, i) => (
+          <tr style={{ background: i % 2 === 0 ? '#f9f9f9' : 'white' }}>
+            <td style="padding:1rem;">
+              <a href={`/platforms/${p.id}`} style="color:#e94560; font-weight:bold; text-decoration:none;">
+                {p.name}
+              </a>
+            </td>
+            <td style="padding:1rem;">
+              <span style={{
+                background: p.type === 'paid' ? '#e94560' : '#16c79a',
+                color: 'white',
+                padding: '2px 8px',
+                borderRadius: '4px',
+                fontSize: '0.85rem'
+              }}>
+                {typeLabel[p.type]}
+              </span>
+            </td>
+            <td style="padding:1rem;">{difficultyLabel[p.contractDifficulty]}</td>
+            <td style="padding:1rem;">{'⭐'.repeat(p.beginnerFriendlyScore)}</td>
+            <td style="padding:1rem; font-size:0.85rem;">{p.suitableGenres.slice(0, 4).join('、')}</td>
+            <td style="padding:1rem; font-size:0.85rem;">{p.incomeModels.join('、')}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</BaseLayout>

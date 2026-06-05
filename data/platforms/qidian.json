@@ -1,0 +1,31 @@
+{
+  "id": "qidian",
+  "name": "起点中文网",
+  "shortName": "起点",
+  "url": "https://www.qidian.com",
+  "authorUrl": "https://write.qidian.com",
+  "type": "paid",
+  "suitableGenres": ["玄幻", "仙侠", "都市", "科幻", "历史", "奇幻", "武侠", "游戏"],
+  "incomeModels": ["VIP付费订阅", "全勤奖", "打赏分成", "月票奖励"],
+  "beginnerFriendlyScore": 2,
+  "contractDifficulty": "hard",
+  "minWordsForContract": 30000,
+  "dailyUpdateRequirement": "2000-4000字/天",
+  "description": "阅文集团旗下，国内最大的网络文学平台。以男频为主，流量大，IP开发成熟，竞争激烈。",
+  "pros": [
+    "国内最大网文平台，流量巨大",
+    "IP改编机会多（影视、游戏、动漫）",
+    "收入天花板高，大神作者年入千万",
+    "全勤奖制度完善",
+    "读者付费意愿强"
+  ],
+  "cons": [
+    "竞争极其激烈，新人难出头",
+    "签约门槛较高",
+    "日更压力大",
+    "版权条款需仔细阅读"
+  ],
+  "tags": ["男频", "付费", "大平台", "IP开发"],
+  "lastChecked": "2026-06-05",
+  "version": 1
+}
