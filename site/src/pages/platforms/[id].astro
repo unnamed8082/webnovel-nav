@@ -14,7 +14,7 @@ const difficultyLabel = { easy: '容易', medium: '中等', hard: '困难' };
 const typeLabel = { paid: '付费阅读', free: '免费+广告', mixed: '混合模式' };
 ---
 <BaseLayout title={platform.name} description={platform.description}>
-  <a href="/platforms" style="color:#e94560; text-decoration:none;">← 返回平台列表</a>
+  <a href={`${import.meta.env.BASE_URL}platforms`} style="color:#e94560; text-decoration:none;">← 返回平台列表</a>
 
   <h1 style="margin-top:1rem;">{platform.name} ({platform.shortName})</h1>
   <p style="color:#666; margin-bottom:1.5rem;">{platform.description}</p>

@@ -62,10 +62,10 @@ const { title, description = '网文新手导航站 - 帮你了解行业、选�
     <div class="container">
       <span class="logo">📖 网文导航</span>
       <div>
-        <a href="/">首页</a>
-        <a href="/platforms">平台对比</a>
-        <a href="/guides">投稿指南</a>
-        <a href="/writing">写作技巧</a>
+        <a href={import.meta.env.BASE_URL}>首页</a>
+        <a href={`${import.meta.env.BASE_URL}platforms`}>平台对比</a>
+        <a href={`${import.meta.env.BASE_URL}guides`}>投稿指南</a>
+        <a href={`${import.meta.env.BASE_URL}writing`}>写作技巧</a>
       </div>
     </div>
   </nav>
