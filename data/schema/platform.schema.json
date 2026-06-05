@@ -100,6 +100,24 @@
     "version": {
       "type": "integer",
       "description": "数据版本号"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "archived", "unknown"],
+      "description": "平台状态：active=运营中, archived=已关站, unknown=不确定"
+    },
+    "officialSources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "来源名称" },
+          "url": { "type": "string", "format": "uri", "description": "来源链接" },
+          "type": { "type": "string", "enum": ["help", "weibo", "wechat", "other"], "description": "来源类型" }
+        },
+        "required": ["name", "url"]
+      },
+      "description": "官方信息来源"
     }
   }
 }

@@ -27,5 +27,10 @@
   ],
   "tags": ["女频", "付费", "耽美", "言情"],
   "lastChecked": "2026-06-05",
-  "version": 1
+  "version": 1,
+  "status": "active",
+  "officialSources": [
+    { "name": "晋江帮助中心", "url": "https://www.jjwxc.net/help/", "type": "help" },
+    { "name": "晋江官方微博", "url": "https://weibo.com/jjwxc", "type": "weibo" }
+  ]
 }

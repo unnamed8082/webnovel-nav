@@ -26,5 +26,10 @@
   ],
   "tags": ["免费", "新人友好", "门槛低"],
   "lastChecked": "2026-06-05",
-  "version": 1
+  "version": 1,
+  "status": "active",
+  "officialSources": [
+    { "name": "七猫作者帮助", "url": "https://author.qimao.com/help", "type": "help" },
+    { "name": "七猫官方微博", "url": "https://weibo.com/qimao", "type": "weibo" }
+  ]
 }

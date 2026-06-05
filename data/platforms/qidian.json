@@ -27,5 +27,10 @@
   ],
   "tags": ["男频", "付费", "大平台", "IP开发"],
   "lastChecked": "2026-06-05",
-  "version": 1
+  "version": 1,
+  "status": "active",
+  "officialSources": [
+    { "name": "起点帮助中心", "url": "https://help.qidian.com", "type": "help" },
+    { "name": "起点官方微博", "url": "https://weibo.com/qidian", "type": "weibo" }
+  ]
 }

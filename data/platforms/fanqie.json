@@ -27,5 +27,10 @@
   ],
   "tags": ["免费", "新人友好", "大流量", "广告分成"],
   "lastChecked": "2026-06-05",
-  "version": 1
+  "version": 1,
+  "status": "active",
+  "officialSources": [
+    { "name": "番茄作者帮助", "url": "https://fanqienovel.com/writer/help", "type": "help" },
+    { "name": "番茄官方微博", "url": "https://weibo.com/fanqienovel", "type": "weibo" }
+  ]
 }
