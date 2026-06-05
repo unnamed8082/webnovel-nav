@@ -26,7 +26,7 @@ const typeLabel = { paid: '付费阅读', free: '免费+广告', mixed: '混合�
         {platforms.map((p, i) => (
           <tr style={{ background: i % 2 === 0 ? '#f9f9f9' : 'white' }}>
             <td style="padding:1rem;">
-              <a href={`/platforms/${p.id}`} style="color:#e94560; font-weight:bold; text-decoration:none;">
+              <a href={`${import.meta.env.BASE_URL}platforms/${p.id}`} style="color:#e94560; font-weight:bold; text-decoration:none;">
                 {p.name}
               </a>
             </td>

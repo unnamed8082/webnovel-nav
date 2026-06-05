@@ -34,7 +34,7 @@ const freePlatforms = platforms.filter(p => p.type === 'free').length;
     <h2>🔥 热门平台</h2>
     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem; margin-top:1rem;">
       {platforms.map(p => (
-        <a href={`/platforms/${p.id}`} style="background:white; padding:1.5rem; border-radius:8px; text-decoration:none; color:#333;">
+        <a href={`${import.meta.env.BASE_URL}platforms/${p.id}`} style="background:white; padding:1.5rem; border-radius:8px; text-decoration:none; color:#333;">
           <h3 style="margin-bottom:0.5rem;">{p.name} ({p.shortName})</h3>
           <p style="font-size:0.9rem; color:#666;">{p.description.slice(0, 60)}...</p>
           <div style="margin-top:0.5rem;">
