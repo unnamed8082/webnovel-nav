@@ -74,8 +74,8 @@
     "本站信息仅供参考，具体规则以起点官方最新公告为准。"
   ],
   "officialSources": [
-    { "name": "起点作家帮助中心", "url": "https://author.qidian.com/help" },
-    { "name": "起点中文网官方微博", "url": "https://weibo.com/qidian" }
+    { "name": "起点作家专区", "url": "https://write.qidian.com" },
+    { "name": "起点帮助中心", "url": "https://help.qidian.com" }
   ],
   "lastChecked": "2026-06-05",
   "schemaVersion": 1

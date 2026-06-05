@@ -68,8 +68,8 @@
     "本站信息仅供参考，具体规则以晋江官方最新公告为准。"
   ],
   "officialSources": [
-    { "name": "晋江作者帮助", "url": "https://www.jjwxc.net/help/" },
-    { "name": "晋江官方微博", "url": "https://weibo.com/jjwxc" }
+    { "name": "晋江文学城", "url": "https://www.jjwxc.net" },
+    { "name": "晋江作者后台", "url": "https://www.jjwxc.net/oneauthor.php" }
   ],
   "lastChecked": "2026-06-05",
   "schemaVersion": 1

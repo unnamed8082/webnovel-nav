@@ -37,47 +37,75 @@ const levelLabel = { beginner: '入门', intermediate: '进阶', advanced: '高�
       </div>
     </header>
 
-    <div style="background:white; padding:2rem; border-radius:8px; line-height:1.8;">
+    <div class="writing-content">
       <Content />
     </div>
   </article>
 </BaseLayout>
 
 <style>
-  article :global(h2) {
+  .writing-content {
+    background: #ffffff;
+    color: #333333;
+    padding: 2rem;
+    border-radius: 8px;
+    line-height: 1.8;
+    color-scheme: light;
+  }
+  .writing-content :global(h1) {
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .writing-content :global(h2) {
     margin-top: 2rem;
     margin-bottom: 0.5rem;
     padding-bottom: 0.3rem;
     border-bottom: 2px solid #f0f0f0;
+    color: #1a1a2e;
+    font-size: 1.4rem;
   }
-  article :global(h3) {
+  .writing-content :global(h3) {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.2rem;
   }
-  article :global(p) {
+  .writing-content :global(p) {
     margin-bottom: 1rem;
+    color: #333;
   }
-  article :global(ul), article :global(ol) {
+  .writing-content :global(ul), .writing-content :global(ol) {
     margin-bottom: 1rem;
     padding-left: 1.5rem;
+    color: #333;
   }
-  article :global(li) {
+  .writing-content :global(li) {
     margin-bottom: 0.3rem;
+    color: #333;
   }
-  article :global(blockquote) {
+  .writing-content :global(blockquote) {
     border-left: 4px solid #e94560;
     padding: 0.5rem 1rem;
     margin: 1rem 0;
     background: #f9f9f9;
     color: #555;
   }
-  article :global(strong) {
+  .writing-content :global(strong) {
     color: #1a1a2e;
   }
-  article :global(code) {
+  .writing-content :global(code) {
     background: #f0f0f0;
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 0.9em;
+    color: #333;
+  }
+  .writing-content :global(a) {
+    color: #e94560;
+    text-decoration: none;
+  }
+  .writing-content :global(a:hover) {
+    text-decoration: underline;
   }
 </style>

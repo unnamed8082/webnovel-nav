@@ -61,8 +61,8 @@
     "本站信息仅供参考，具体规则以七猫官方最新公告为准。"
   ],
   "officialSources": [
-    { "name": "七猫小说作者帮助", "url": "https://www.qimao.com/writer/help" },
-    { "name": "七猫官方微博", "url": "https://weibo.com/qimao" }
+    { "name": "七猫小说官网", "url": "https://www.qimao.com" },
+    { "name": "七猫作者后台", "url": "https://author.qimao.com" }
   ],
   "lastChecked": "2026-06-05",
   "schemaVersion": 1
